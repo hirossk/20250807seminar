@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データ分析のメリット インフォグラフィック</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background-color: #FFFFFF;
+            color: #333333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow::after {
+            content: '→';
+            font-size: 2rem;
+            color: #FFC93C;
+            margin: 0 1rem;
+            align-self: center;
+        }
+        .flow-item {
+            background-color: #3E92CC;
+            color: #FFFFFF;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            font-weight: 700;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav id="pagination-nav" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-md p-4">
+        <div class="container mx-auto flex justify-center space-x-4">
+            <a href="#section1" class="text-gray-600 font-bold hover:text-gray-900 px-4 py-2 rounded-full transition-colors duration-300">1</a>
+            <a href="#section2" class="text-gray-600 font-bold hover:text-gray-900 px-4 py-2 rounded-full transition-colors duration-300">2</a>
+            <a href="#section3" class="text-gray-600 font-bold hover:text-gray-900 px-4 py-2 rounded-full transition-colors duration-300">3</a>
+            <a href="#section4" class="text-gray-600 font-bold hover:text-gray-900 px-4 py-2 rounded-full transition-colors duration-300">4</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 md:py-16 mt-20">
+
+        <header class="text-center mb-16 md:mb-24">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4" style="color: #FFC93C;">データ分析は、</h1>
+            <h2 class="text-4xl md:text-6xl font-extrabold" style="color: #0A2463;">未来へのパスポート</h2>
+            <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">君の「なぜ？」が、世界を変える力になる。データ分析のすごい世界をのぞいてみよう！</p>
+        </header>
+
+        <section id="section1" class="mb-16 md:mb-24">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12"><span style="color: #FFC93C;">#1</span> データ分析って、なんだろう？</h3>
+            <div class="bg-gray-100 rounded-2xl p-6 md:p-8 shadow-lg">
+                <p class="text-xl md:text-2xl text-center mb-8">実は、君の身の回りはデータ分析であふれているんだ。</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-gray-200 rounded-xl p-6">
+                        <div class="text-6xl mb-4">▶️</div>
+                        <h4 class="text-xl font-bold mb-2">YouTubeのおすすめ</h4>
+                        <p class="text-gray-600">視聴履歴から、君が好きそうな動画を予測して表示している。</p>
+                    </div>
+                    <div class="bg-gray-200 rounded-xl p-6">
+                        <div class="text-6xl mb-4">☀️</div>
+                        <h4 class="text-xl font-bold mb-2">天気予報アプリ</h4>
+                        <p class="text-gray-600">過去の気象データを分析して、明日の天気を高い精度で予測する。</p>
+                    </div>
+                    <div class="bg-gray-200 rounded-xl p-6">
+                        <div class="text-6xl mb-4">🏆</div>
+                        <h4 class="text-xl font-bold mb-2">お店の売上ランキング</h4>
+                        <p class="text-gray-600">販売データを分析して、人気商品を把握し、仕入れに活かしている。</p>
+                    </div>
+                </div>
+                <p class="text-xl md:text-2xl text-center mt-8 font-bold" style="color: #D8315B;">つまりデータ分析とは、集めたデータを読み解き、未来を予測したり、問題を解決したりする力のこと！</p>
+            </div>
+        </section>
+
+        <section id="section2" class="mb-16 md:mb-24">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12"><span style="color: #FFC93C;">#2</span> 学ぶと、どんないいことがあるの？</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+                <div class="bg-gray-100 rounded-2xl p-6 md:p-8 shadow-lg">
+                    <h4 class="text-2xl md:text-3xl font-bold mb-4 text-center">論理的な考え方が身につく</h4>
+                    <p class="text-center text-gray-600 mb-6">データという根拠をもって、物事を説明できるようになる！</p>
+                    <div class="flex flex-wrap justify-center items-center">
+                        <div class="flow-item">データ</div>
+                        <div class="flow-arrow"></div>
+                        <div class="flow-item">なぜ？</div>
+                        <div class="flow-arrow"></div>
+                        <div class="flow-item">分析</div>
+                        <div class="flow-arrow"></div>
+                        <div class="flow-item" style="background-color: #D8315B;">論理的な結論</div>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-2xl p-6 md:p-8 shadow-lg">
+                    <h4 class="text-2xl md:text-3xl font-bold mb-4 text-center">未来を予測する力が身につく</h4>
+                    <p class="text-center text-gray-600 mb-6">データ分析スキルが上がると、将来の選択肢はどんどん広がる！</p>
+                    <div class="chart-container">
+                        <canvas id="futureChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section3" class="mb-16 md:mb-24">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12"><span style="color: #FFC93C;">#3</span> データ分析で広がる未来</h3>
+            <div class="bg-gray-100 rounded-2xl p-6 md:p-8 shadow-lg">
+                <p class="text-xl md:text-2xl text-center mb-8">データ分析スキルは、ITやAIの世界だけじゃない。あらゆる分野で君の力を待っている！</p>
+                <div class="chart-container h-80 md:h-96 max-h-[450px]">
+                    <canvas id="careerChart"></canvas>
+                </div>
+                 <p class="text-lg md:text-xl text-center mt-8 text-gray-600">ここに挙げたのはほんの一例。君の好きなこととデータ分析を組み合わせれば、可能性は無限大だ。</p>
+            </div>
+        </section>
+
+        <section id="section4" class="mb-16 md:mb-24">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12"><span style="color: #FFC93C;">#4</span> 今日から始められること</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-100 rounded-2xl p-6 md:p-8 shadow-lg">
+                    <h4 class="text-2xl md:text-3xl font-bold mb-4">1. 毎日の「なぜ？」を大切に</h4>
+                    <ul class="list-none space-y-4 text-lg">
+                        <li class="p-4 rounded-lg bg-gray-200">🤔 「なぜこの動画は人気なんだろう？」</li>
+                        <li class="p-4 rounded-lg bg-gray-200">🤔 「なぜこのお店はいつも混んでいるんだろう？」</li>
+                        <li class="p-4 rounded-lg bg-gray-200">🤔 「なぜこのゲームはハマるんだろう？」</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-100 rounded-2xl p-6 md:p-8 shadow-lg">
+                    <h4 class="text-2xl md:text-3xl font-bold mb-4">2. データを集めてみよう</h4>
+                     <ul class="list-none space-y-4 text-lg">
+                        <li class="p-4 rounded-lg bg-gray-200">📈 好きなスポーツチームの成績を記録する</li>
+                        <li class="p-4 rounded-lg bg-gray-200">📉 自分のテストの点数の推移をグラフにする</li>
+                        <li class="p-4 rounded-lg bg-gray-200">📊 毎日の睡眠時間を記録してみる</li>
+                    </ul>
+                </div>
+            </div>
+             <p class="text-xl md:text-2xl text-center mt-12 font-bold" style="color: #D8315B;">身近なことからでOK！法則を探すのがデータ分析の第一歩！</p>
+        </section>
+
+        <footer class="text-center border-t-2 border-gray-300 pt-12">
+             <h3 class="text-3xl md:text-4xl font-bold mb-4" style="color: #0A2463;">さあ、未来へのパスポートを手にしよう！</h3>
+             <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">データ分析は、君に論理的思考力、問題解決能力、そして未来を予測する力をくれる。身の回りのデータに興味を持って、未来を自分で切り開く冒険に出かけよう！</p>
+        </footer>
+
+    </main>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+        
+        const futureCtx = document.getElementById('futureChart').getContext('2d');
+        new Chart(futureCtx, {
+            type: 'line',
+            data: {
+                labels: ['中学時代', '高校1年', '高校2年', '高校3年', '大学/社会人'],
+                datasets: [{
+                    label: '将来のキャリア選択肢',
+                    data: [10, 25, 50, 80, 100],
+                    borderColor: '#D8315B',
+                    backgroundColor: 'rgba(216, 49, 91, 0.2)',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#FFFFFF',
+                    pointBorderColor: '#D8315B',
+                    pointHoverRadius: 7,
+                    pointRadius: 5,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                           color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        ticks: {
+                            color: '#333333',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    x: {
+                         grid: {
+                           color: 'rgba(0, 0, 0, 0.05)'
+                        },
+                        ticks: {
+                            color: '#333333',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const careerCtx = document.getElementById('careerChart').getContext('2d');
+        const originalLabels = ['ビジネス (マーケティング、企画)', 'IT・AIエンジニア', '医療・ヘルスケア', '教育・研究', '社会貢献 (NPO、行政)', 'クリエイティブ (ゲーム、映像)'];
+        const processedLabels = originalLabels.map(wrapLabel);
+
+        new Chart(careerCtx, {
+            type: 'doughnut',
+            data: {
+                labels: processedLabels,
+                datasets: [{
+                    label: '活躍できる分野',
+                    data: [30, 25, 15, 10, 10, 10],
+                    backgroundColor: [
+                        '#3E92CC',
+                        '#D8315B',
+                        '#FFC93C',
+                        '#58D68D',
+                        '#AF7AC5',
+                        '#F39C12'
+                    ],
+                    borderColor: '#FFFFFF',
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#333333',
+                            font: {
+                                size: 14
+                            },
+                            padding: 20,
+                             generateLabels: function(chart) {
+                                const data = chart.data;
+                                if (data.labels.length && data.datasets.length) {
+                                    return data.labels.map(function(label, i) {
+                                        const meta = chart.getDatasetMeta(0);
+                                        const style = meta.controller.getStyle(i);
+                                        const fullLabel = Array.isArray(label) ? label.join(' ') : label;
+                                        
+                                        return {
+                                            text: fullLabel,
+                                            fillStyle: style.backgroundColor,
+                                            strokeStyle: style.borderColor,
+                                            lineWidth: style.borderWidth,
+                                            hidden: isNaN(data.datasets[0].data[i]) || meta.data[i].hidden,
+                                            index: i
+                                        };
+                                    });
+                                }
+                                return [];
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('#pagination-nav a');
+        
+        const removeActiveClass = () => {
+            navLinks.forEach(link => {
+                link.classList.remove('text-gray-900');
+                link.classList.add('text-gray-600');
+            });
+        };
+
+        const addActiveClass = (id) => {
+            const activeLink = document.querySelector(`#pagination-nav a[href="#${id}"]`);
+            if (activeLink) {
+                removeActiveClass();
+                activeLink.classList.remove('text-gray-600');
+                activeLink.classList.add('text-gray-900');
+            }
+        };
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            addActiveClass(current);
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
